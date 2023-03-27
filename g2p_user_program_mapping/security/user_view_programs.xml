@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.rule" id="program_user_mapping">
+        <field name="name">Program User Mapping</field>
+        <field name="model_id" ref="model_g2p_program" />
+        <field name="domain_force">[('program_membership_ids.partner_id.id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+    </record>
+</odoo>
